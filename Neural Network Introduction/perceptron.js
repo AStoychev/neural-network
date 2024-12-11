@@ -39,7 +39,6 @@ class Perceptron {
                 for(let k = 0; k < this.weights.length; k++) {
                     this.weights[k] += this.learningRate * (yt - yp) * inputs[k]
                 }
-
                 this.bias += this.learningRate * (yt - yp);
             }
         }
