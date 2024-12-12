@@ -23,16 +23,21 @@ class Perceptron {
         return x >= 0 ? 1 : 0;
     };
 
+    predict (inputs) {
+        let sum = this.bias;
+
+        for(let j = 0; j < inputs.length; j++) {
+            sum += inputs[j] * this.weights[j];
+        }
+
+        return this.activationFunction(sum);
+    }
+
     train(trainData, trainLabels) {
         for (let i = 0; i < trainData.length; i++) {
-            let sum = this.bias;
             let inputs = trainData[i];
 
-            for(let j = 0; j < inputs.length; j++) {
-                sum += inputs[j] * this.weights[j];
-            }
-
-            const yp = this.activationFunction(sum);
+            const yp = this.predict(inputs)
             const yt = trainLabels[i];
 
             if(yt != yp) {
