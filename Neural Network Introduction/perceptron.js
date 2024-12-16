@@ -6,7 +6,17 @@ const trainInputs = [
     [2, 1],
 ];
 
+const testInputs = [
+    [2, 6],
+    [3, 7],
+    [1, 3],
+    [2, 2],
+    [2, 5],
+];
+
 const trainLabels = [1, 1, 0, 0, 0];
+const testLabels = [1, 1, 0, 0, 1];
+
 // const weights = [0.1, 0.3];
 // const b = 0.5; //bias
 // const n = 0.1; //learning
@@ -65,6 +75,16 @@ class Perceptron {
 }
 
 const perceptron = new Perceptron();
-perceptron.train(trainInputs, trainLabels);
+
+const EPOCHS = 10;
+for (let epoch = 0; epoch < EPOCHS; epoch++) {
+    perceptron.train(trainInputs, trainLabels)
+}
+
+// perceptron.train(trainInputs, trainLabels);
 
 const trainingAccuracy = perceptron.calculateAccuracy(trainInputs, trainLabels);
+const testingAccuracy = perceptron.calculateAccuracy(testInputs, testLabels);
+
+// console.log('Training Accurancy: ', trainingAccuracy);
+// console.log('Testing Accurancy: ', testingAccuracy)
