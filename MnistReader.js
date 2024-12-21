@@ -8,11 +8,27 @@ function readIdxFile(filepath) {
     offset += 4;
 
     const numberOfItems = data.readUint32BE(offset);
-    offset +=4;
-    const rows = data.readUint32BE(offset);
     offset += 4;
-    const cols = data.readUint32BE(offset);
-    
+
+    if (magicNumber === 2049) {
+        const labels = [];
+
+        for (let i = 0; i < numberOfItems; i++) {
+            labels.push(data.readUint8(offset));
+            offset += 1;
+        }
+        return { type: 'labels', data: labels };
+
+    } else {
+        const rows = data.readUint32BE(offset);
+        offset += 4;
+        const cols = data.readUint32BE(offset);
+    }
+
 }
 
-readIdxFile("./datasets/mnist/train-images.idx3-ubyte");
+// readIdxFile("./datasets/mnist/train-images.idx3-ubyte");
+
+const trainLabels = readIdxFile("./datasets/mnist/train-labels.idx1-ubyte");
+
+console.log(trainLabels)
