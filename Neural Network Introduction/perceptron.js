@@ -86,8 +86,8 @@ const perceptron = new Perceptron(0.05);
 
 const EPOCHS = 10;
 for (let epoch = 0; epoch < EPOCHS; epoch++) {
+    
     perceptron.train(trainInputs, trainLabels);
-
     const trainingAccuracy = perceptron.calculateAccuracy(trainInputs, trainLabels);
     const testingAccuracy = perceptron.calculateAccuracy(testInputs, testLabels);
 
