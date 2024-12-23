@@ -85,6 +85,7 @@ class Perceptron {
 const perceptron = new Perceptron(0.05);
 
 const EPOCHS = 10;
+
 for (let epoch = 0; epoch < EPOCHS; epoch++) {
     
     perceptron.train(trainInputs, trainLabels);
