@@ -19,6 +19,7 @@ function readIdxFile(filepath) {
         }
         
         return { type: 'labels', data: labels };
+
     } else {
         const rows = data.readUint32BE(offset);
         offset += 4;
@@ -30,5 +31,3 @@ function readIdxFile(filepath) {
 // readIdxFile("./datasets/mnist/train-images.idx3-ubyte");
 
 const trainLabels = readIdxFile("./datasets/mnist/train-labels.idx1-ubyte");
-
-console.log(trainLabels)
