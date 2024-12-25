@@ -58,6 +58,6 @@ Epoch 2:
   Training Accuracy: 90%
   Testing Accuracy: 70%
 ...
-
+---
 
 This README gives an overview of the project, explains its components, and provides basic instructions for usage. Let me know if you'd like to customize it further!
