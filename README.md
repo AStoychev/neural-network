@@ -44,6 +44,7 @@ The `readIdxFile` function:
 ### Running the Perceptron
 1. Clone the repository and navigate to the project folder.
 2. Install dependencies:
+
 `npm install`
 
 
