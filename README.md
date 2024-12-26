@@ -2,7 +2,6 @@
 
 This project is a simple implementation of a perceptron neural network in JavaScript. The perceptron is trained on a small dataset and tested for accuracy. Additionally, functionality to read MNIST dataset files is provided for advanced usage.
 
----
 
 ## Features
 - **Perceptron Class**:
@@ -12,8 +11,6 @@ This project is a simple implementation of a perceptron neural network in JavaSc
 - **MNIST Reader**:
   - Reads MNIST dataset files in IDX format.
   - Supports loading training and testing data labels.
-
----
 
 ## Code Overview
 
@@ -29,7 +26,6 @@ The `readIdxFile` function:
 - Reads IDX formatted files from the MNIST dataset.
 - Parses both labels and image dimensions.
 
----
 
 ## Dataset
 - **Training Inputs**: A small dataset of 2D inputs.
@@ -37,7 +33,6 @@ The `readIdxFile` function:
 - **Testing Inputs**: Separate dataset for testing.
 - **Testing Labels**: Binary labels for testing data.
 
----
 
 ## Usage
 
@@ -59,6 +54,5 @@ Epoch 2:
   Training Accuracy: 90%
   Testing Accuracy: 70%
 ...
----
 
 This README gives an overview of the project, explains its components, and provides basic instructions for usage. Let me know if you'd like to customize it further!
