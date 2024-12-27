@@ -31,9 +31,7 @@ const testLabels = [1, 1, 0, 0, 1];
 class Perceptron {
     constructor(learningRate = 0.1) {
         this.weights = Array(2).fill(0).map(() => Math.random() * 0.5 - 0.2);
-        // this.weights = [0.1, -0.3];
         this.bias = Math.random() * 0.5 - 0.2;
-        // this.bias = 0.5;
         this.learningRate = learningRate
     }
 
@@ -91,9 +89,6 @@ for (let epoch = 0; epoch < EPOCHS; epoch++) {
     perceptron.train(trainInputs, trainLabels);
     const trainingAccuracy = perceptron.calculateAccuracy(trainInputs, trainLabels);
     const testingAccuracy = perceptron.calculateAccuracy(testInputs, testLabels);
-
-    // console.log('Training Accurancy: ', trainingAccuracy);
-    // console.log('Testing Accurancy: ', testingAccuracy)
 }
 
 // perceptron.train(trainInputs, trainLabels);
