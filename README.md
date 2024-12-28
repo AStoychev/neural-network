@@ -38,7 +38,6 @@ The `readIdxFile` function:
 - **Testing Labels**: Binary labels for testing data.
 
 
-
 ## Usage
 
 ### Running the Perceptron
