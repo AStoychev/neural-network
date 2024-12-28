@@ -3,6 +3,7 @@
 This project is a simple implementation of a perceptron neural network in JavaScript. The perceptron is trained on a small dataset and tested for accuracy. Additionally, functionality to read MNIST dataset files is provided for advanced usage.
 
 
+
 ## Features
 - **Perceptron Class**:
   - Implements a single-layer perceptron for binary classification.
@@ -11,6 +12,8 @@ This project is a simple implementation of a perceptron neural network in JavaSc
 - **MNIST Reader**:
   - Reads MNIST dataset files in IDX format.
   - Supports loading training and testing data labels.
+
+
 
 ## Code Overview
 
@@ -27,11 +30,13 @@ The `readIdxFile` function:
 - Parses both labels and image dimensions.
 
 
+
 ## Dataset
 - **Training Inputs**: A small dataset of 2D inputs.
 - **Training Labels**: Binary labels for training data.
 - **Testing Inputs**: Separate dataset for testing.
 - **Testing Labels**: Binary labels for testing data.
+
 
 
 ## Usage
@@ -41,7 +46,6 @@ The `readIdxFile` function:
 2. Install dependencies:
 
 `npm install`
-
 
 ### Run the code
 `node perceptron.js`
