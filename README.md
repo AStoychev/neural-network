@@ -14,7 +14,6 @@ This project is a simple implementation of a perceptron neural network in JavaSc
   - Supports loading training and testing data labels.
 
 
-
 ## Code Overview
 
 ### Perceptron
@@ -28,7 +27,6 @@ The `Perceptron` class:
 The `readIdxFile` function:
 - Reads IDX formatted files from the MNIST dataset.
 - Parses both labels and image dimensions.
-
 
 
 ## Dataset
