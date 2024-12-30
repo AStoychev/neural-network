@@ -50,8 +50,8 @@ class Perceptron {
 
     train(trainData, trainLabels) {
         for (let i = 0; i < trainData.length; i++) {
-            let inputs = trainData[i];
 
+            let inputs = trainData[i];
             const yp = this.predict(inputs)
             const yt = trainLabels[i];
 
