@@ -47,6 +47,7 @@ class Perceptron {
 
         return this.activationFunction(sum);
     }
+    
     train(trainData, trainLabels) {
         for (let i = 0; i < trainData.length; i++) {
 
