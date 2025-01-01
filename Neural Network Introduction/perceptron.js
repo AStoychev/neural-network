@@ -4,10 +4,21 @@ const seed = "perc-2";
 
 seedrandom(seed, { global: true });
 
+const trainInputs = [
+    [2, 7],
+    [3, 6],
+    [1, 1],
+    [1, 2],
+    [2, 1],
+];
 
-const trainInputs = [[2, 7], [3, 6], [1, 1], [1, 2], [2, 1]];
-
-const testInputs = [[2, 6], [3, 7], [1, 3], [2, 2], [2, 5]];
+const testInputs = [
+    [2, 6],
+    [3, 7],
+    [1, 3],
+    [2, 2],
+    [2, 5],
+];
 
 const trainLabels = [1, 1, 0, 0, 0];
 const testLabels = [1, 1, 0, 0, 1];
@@ -36,17 +47,17 @@ class Perceptron {
 
         return this.activationFunction(sum);
     }
-
+    
     train(trainData, trainLabels) {
         for (let i = 0; i < trainData.length; i++) {
 
             let inputs = trainData[i];
-            const yp = this.predict(inputs)
+            const yp = this.predict(inputs);
             const yt = trainLabels[i];
 
             if (yt != yp) {
                 for (let k = 0; k < this.weights.length; k++) {
-                    this.weights[k] += this.learningRate * (yt - yp) * inputs[k]
+                    this.weights[k] += this.learningRate * (yt - yp) * inputs[k];
                 }
 
                 this.bias += this.learningRate * (yt - yp);
@@ -61,7 +72,7 @@ class Perceptron {
 
             if (yp === labels[i]) {
                 correct++;
-            }
+            };
         }
 
         return (correct / inputs.length) * 100;
@@ -73,7 +84,7 @@ const perceptron = new Perceptron(0.05);
 const EPOCHS = 10;
 
 for (let epoch = 0; epoch < EPOCHS; epoch++) {
-
+    
     perceptron.train(trainInputs, trainLabels);
     const trainingAccuracy = perceptron.calculateAccuracy(trainInputs, trainLabels);
     const testingAccuracy = perceptron.calculateAccuracy(testInputs, testLabels);
