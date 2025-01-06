@@ -42,14 +42,28 @@ function readIdxFile(filepath) {
 
                 image.push(row);
             };
-            
+
             images.push(image);
         }
         return { type: "images", data: images }
     }
-
 }
 
-const trainImages = readIdxFile("./datasets/mnist/train-images.idx3-ubyte");
+function saveData(labels, inputs, path) {
+    const data = {
+        labels,
+        inputs
+    };
 
-// const trainLabels = readIdxFile("./datasets/mnist/train-labels.idx1-ubyte");
+    try {
+        fs.writeFileSync(`${path}.json`, JSON.stringify(data, null, 0));
+        console.log(`File ${path}.json saved!`);
+    } catch(e) {
+        console.log(e.message);
+    }
+}
+
+const testImages = readIdxFile("./datasets/mnist/t10k-images.idx3-ubyte");
+const testLabels = readIdxFile("./datasets/mnist/t10k-labels.idx1-ubyte");
+
+saveData(testLabels.data, testImages.data, "./datasets/mnist/test-data");
