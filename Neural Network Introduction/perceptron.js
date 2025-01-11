@@ -12,7 +12,6 @@ const trainInputs = [
     [2, 1],
 ];
 
-
 const testInputs = [
     [2, 6],
     [3, 7],
