@@ -4,8 +4,9 @@ import Home from "./pages/Home";
 import PreviewTestImages from "./pages/mnist/PreviewTestImage";
 
 function Router() {
-    const [pathname, setPathname] = useState(window.location.pathname);
 
+    const [pathname, setPathname] = useState(window.location.pathname);
+    
     switch (pathname) {
         case "/mnist/test-images":
             return <PreviewTestImages />;
