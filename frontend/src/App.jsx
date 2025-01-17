@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 // import Navigation from "./pages/Navigations";
 import Home from "./pages/Home";
 import PreviewTestImages from "./pages/mnist/PreviewTestImage";
@@ -6,7 +6,8 @@ import PreviewTestImages from "./pages/mnist/PreviewTestImage";
 function Navigation() {
     const pushState = (path) => (e) => {
         e.preventDefault();
-        window.history.pushState({}, "", path)
+        window.history.pushState({}, "", path);
+        window.dispatchEvent(new PopStateEvent("pop"));
     }
 
     return (
@@ -35,6 +36,18 @@ function Navigation() {
 function Router() {
 
     const [pathname, setPathname] = useState(window.location.pathname);
+
+    useEffect(() => {
+        const handlePopState = () => {
+            setPathname(window.location.pathname);
+        };
+
+        window.addEventListener("popstate", handlePopState);
+
+        return () => {
+            window.removeEventListener("popstate", handlePopState);
+        };
+    }, []);
 
     switch (pathname) {
         case "/mnist/test-images":
