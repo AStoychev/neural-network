@@ -23,7 +23,7 @@ function readIdxFile(filepath) {
     } else {
         const rows = data.readUint32BE(offset);
         offset += 4;
-        
+
         const cols = data.readUint32BE(offset);
         offset += 4;
 
@@ -46,10 +46,29 @@ function readIdxFile(filepath) {
             images.push(image);
         }
         return { type: "images", data: images }
-    }
-}
+    };
+};
+
+const BATCH_SIZE = 5000;
+const MAX_BATCHES = 10;
 
 function saveData(labels, inputs, path) {
+
+    let batchTracker = 0;
+
+    for (let i = 0; i < labels.length; i += BATCH_SIZE) {
+        const labelsBatch = labels.slice(i, i + BATCH_SIZE);
+        const inputsBatch = inputs.slice(i, i + BATCH_SIZE);
+
+        batchTracker++;
+
+        if (batchTracker === MAX_BATCHES) {
+            break;
+        }
+    };
+};
+
+function saveBatch(batch, labels, inputs, path) {
     const data = {
         labels,
         inputs
@@ -58,10 +77,10 @@ function saveData(labels, inputs, path) {
     try {
         fs.writeFileSync(`${path}.json`, JSON.stringify(data, null, 0));
         console.log(`File ${path}.json saved!`);
-    } catch(e) {
+    } catch (e) {
         console.log(e.message);
-    }
-}
+    };
+};
 
 const testImages = readIdxFile("./datasets/mnist/t10k-images.idx3-ubyte");
 const testLabels = readIdxFile("./datasets/mnist/t10k-labels.idx1-ubyte");
