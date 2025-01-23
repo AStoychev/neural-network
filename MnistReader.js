@@ -59,7 +59,7 @@ function saveData(labels, inputs, path) {
     for (let i = 0; i < labels.length; i += BATCH_SIZE) {
         const labelsBatch = labels.slice(i, i + BATCH_SIZE);
         const inputsBatch = inputs.slice(i, i + BATCH_SIZE);
-
+        saveBatch(i / BATCH_SIZE, labels, inputs, path);
         batchTracker++;
 
         if (batchTracker === MAX_BATCHES) {
@@ -75,8 +75,8 @@ function saveBatch(batch, labels, inputs, path) {
     };
 
     try {
-        fs.writeFileSync(`${path}.json`, JSON.stringify(data, null, 0));
-        console.log(`File ${path}.json saved!`);
+        fs.writeFileSync(`${path}-${batch}.json`, JSON.stringify(data, null, 0));
+        console.log(`File ${path}-${batch}.json saved!`);
     } catch (e) {
         console.log(e.message);
     };
