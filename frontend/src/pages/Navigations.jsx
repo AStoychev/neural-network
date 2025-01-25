@@ -2,6 +2,7 @@ function Navigation() {
     
     return (
         <nav>
+
             <ul>
                 <li>
                     <div className="link" onClick={() => alert("Go Home!")}>
@@ -19,6 +20,7 @@ function Navigation() {
                     </div>
                 </li>
             </ul>
+            
         </nav>
     )
 }
