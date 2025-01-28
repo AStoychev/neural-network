@@ -9,6 +9,7 @@ function Navigation() {
         window.history.pushState({}, "", path);
         window.dispatchEvent(new PopStateEvent("pop"));
     }
+    
 
     return (
         <nav>
