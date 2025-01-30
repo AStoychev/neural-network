@@ -40,7 +40,9 @@ function Router() {
         const handlePopState = () => {
             setPathname(window.location.pathname);
         };
+
         window.addEventListener("popstate", handlePopState);
+        
         return () => {
             window.removeEventListener("popstate", handlePopState);
         };
@@ -52,6 +54,7 @@ function Router() {
         default:
             return <Home />
     }
+    
 }
 
 function App() {
