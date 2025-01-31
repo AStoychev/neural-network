@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import PreviewTestImages from "./pages/mnist/PreviewTestImage";
 
 function Navigation() {
+    
     const pushState = (path) => (e) => {
         e.preventDefault();
         window.history.pushState({}, "", path);
@@ -40,7 +41,6 @@ function Router() {
         const handlePopState = () => {
             setPathname(window.location.pathname);
         };
-
         window.addEventListener("popstate", handlePopState);
         
         return () => {
