@@ -35,14 +35,14 @@ function Navigation() {
 }
 
 function Router() {
-    const [pathname, setPathname] = useState(window.location.pathname);
 
+    const [pathname, setPathname] = useState(window.location.pathname);
+    
     useEffect(() => {
         const handlePopState = () => {
             setPathname(window.location.pathname);
         };
         window.addEventListener("popstate", handlePopState);
-        
         return () => {
             window.removeEventListener("popstate", handlePopState);
         };
