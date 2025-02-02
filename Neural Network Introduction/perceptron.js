@@ -50,11 +50,9 @@ class Perceptron {
 
     train(trainData, trainLabels) {
         for (let i = 0; i < trainData.length; i++) {
-
             let inputs = trainData[i];
             const yp = this.predict(inputs);
             const yt = trainLabels[i];
-
             if (yt != yp) {
                 for (let k = 0; k < this.weights.length; k++) {
                     this.weights[k] += this.learningRate * (yt - yp) * inputs[k];
