@@ -4,7 +4,7 @@ import Home from "./pages/Home";
 import PreviewTestImages from "./pages/mnist/PreviewTestImage";
 
 function Navigation() {
-    
+
     const pushState = (path) => (e) => {
         e.preventDefault();
         window.history.pushState({}, "", path);
@@ -37,12 +37,14 @@ function Navigation() {
 function Router() {
 
     const [pathname, setPathname] = useState(window.location.pathname);
-    
+
     useEffect(() => {
         const handlePopState = () => {
             setPathname(window.location.pathname);
         };
+
         window.addEventListener("popstate", handlePopState);
+        
         return () => {
             window.removeEventListener("popstate", handlePopState);
         };
@@ -54,7 +56,7 @@ function Router() {
         default:
             return <Home />
     }
-    
+
 }
 
 function App() {
