@@ -44,22 +44,23 @@ function Router() {
         };
 
         window.addEventListener("popstate", handlePopState);
-        
         return () => {
             window.removeEventListener("popstate", handlePopState);
         };
     }, []);
 
     switch (pathname) {
+        
         case "/mnist/test-images":
             return <PreviewTestImages />;
         default:
             return <Home />
     }
-
+    
 }
 
 function App() {
+
     return (
         <div className="App">
             <div className="app-container">
