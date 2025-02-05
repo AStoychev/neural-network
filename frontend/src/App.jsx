@@ -42,7 +42,6 @@ function Router() {
         const handlePopState = () => {
             setPathname(window.location.pathname);
         };
-
         window.addEventListener("popstate", handlePopState);
         return () => {
             window.removeEventListener("popstate", handlePopState);
@@ -50,7 +49,6 @@ function Router() {
     }, []);
 
     switch (pathname) {
-        
         case "/mnist/test-images":
             return <PreviewTestImages />;
         default:
