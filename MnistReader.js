@@ -19,7 +19,6 @@ function readIdxFile(filepath) {
         
         return { type: 'labels', data: labels };
 
-        
     } else {
         const rows = data.readUint32BE(offset);
         offset += 4;
