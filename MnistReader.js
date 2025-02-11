@@ -16,6 +16,7 @@ function readIdxFile(filepath) {
             labels.push(data.readUint8(offset));
             offset += 1;
         }
+        
         return { type: 'labels', data: labels };
 
     } else {
@@ -29,7 +30,6 @@ function readIdxFile(filepath) {
 
         for (let i = 0; i < numberOfItems; i++) {
             const image = [];
-
             for (let r = 0; r < rows; r++) {
                 const row = [];
 
@@ -41,6 +41,7 @@ function readIdxFile(filepath) {
             };
             images.push(image);
         }
+        
         return { type: "images", data: images }
     };
 };
