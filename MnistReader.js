@@ -16,7 +16,6 @@ function readIdxFile(filepath) {
             labels.push(data.readUint8(offset));
             offset += 1;
         }
-        
         return { type: 'labels', data: labels };
 
     } else {
@@ -37,6 +36,7 @@ function readIdxFile(filepath) {
                     row.push(data.readUint8(offset));
                     offset += 1;
                 };
+
                 image.push(row);
             };
             images.push(image);
