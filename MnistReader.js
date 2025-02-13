@@ -39,7 +39,9 @@ function readIdxFile(filepath) {
 
                 image.push(row);
             };
+
             images.push(image);
+            
         }
         
         return { type: "images", data: images }
