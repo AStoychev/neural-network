@@ -36,12 +36,10 @@ function readIdxFile(filepath) {
                     row.push(data.readUint8(offset));
                     offset += 1;
                 };
-
                 image.push(row);
             };
 
             images.push(image);
-            
         }
         
         return { type: "images", data: images }
