@@ -22,6 +22,7 @@ function readIdxFile(filepath) {
         const rows = data.readUint32BE(offset);
         offset += 4;
         const cols = data.readUint32BE(offset);
+
         offset += 4;
         const images = [];
 
@@ -33,6 +34,7 @@ function readIdxFile(filepath) {
                     row.push(data.readUint8(offset));
                     offset += 1;
                 };
+                
                 image.push(row);
             };
             images.push(image);
