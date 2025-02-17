@@ -32,6 +32,7 @@ function readIdxFile(filepath) {
                 const row = [];
                 for (let c = 0; c < cols; c++) {
                     row.push(data.readUint8(offset));
+                    
                     offset += 1;
                 };
                 
@@ -53,6 +54,7 @@ function saveData(labels, inputs, path) {
     for (let i = 0; i < labels.length; i += BATCH_SIZE) {
         const labelsBatch = labels.slice(i, i + BATCH_SIZE);
         const inputsBatch = inputs.slice(i, i + BATCH_SIZE);
+
         saveBatch(i / BATCH_SIZE, labels, inputs, path);
         batchTracker++;
 
