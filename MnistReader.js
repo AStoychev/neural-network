@@ -30,6 +30,7 @@ function readIdxFile(filepath) {
             const image = [];
             for (let r = 0; r < rows; r++) {
                 const row = [];
+
                 for (let c = 0; c < cols; c++) {
                     row.push(data.readUint8(offset));
                     
@@ -38,6 +39,7 @@ function readIdxFile(filepath) {
                 
                 image.push(row);
             };
+            
             images.push(image);
         }
         return { type: "images", data: images }
