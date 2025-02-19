@@ -14,6 +14,7 @@ function readIdxFile(filepath) {
 
         for (let i = 0; i < numberOfItems; i++) {
             labels.push(data.readUint8(offset));
+            
             offset += 1;
         }
         return { type: 'labels', data: labels };
@@ -33,7 +34,6 @@ function readIdxFile(filepath) {
 
                 for (let c = 0; c < cols; c++) {
                     row.push(data.readUint8(offset));
-                    
                     offset += 1;
                 };
                 
