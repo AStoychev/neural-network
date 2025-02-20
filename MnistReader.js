@@ -11,10 +11,8 @@ function readIdxFile(filepath) {
 
     if (magicNumber === 2049) {
         const labels = [];
-
         for (let i = 0; i < numberOfItems; i++) {
             labels.push(data.readUint8(offset));
-            
             offset += 1;
         }
         return { type: 'labels', data: labels };
@@ -36,7 +34,6 @@ function readIdxFile(filepath) {
                     row.push(data.readUint8(offset));
                     offset += 1;
                 };
-                
                 image.push(row);
             };
             
