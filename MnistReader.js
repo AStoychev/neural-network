@@ -4,7 +4,6 @@ function readIdxFile(filepath) {
     const data = fs.readFileSync(filepath);
     let offset = 0;
     const magicNumber = data.readUInt32BE(offset);
-    
     offset += 4;
     
     const numberOfItems = data.readUint32BE(offset);
@@ -15,7 +14,6 @@ function readIdxFile(filepath) {
         for (let i = 0; i < numberOfItems; i++) {
 
             labels.push(data.readUint8(offset));
-
             offset += 1;
         }
         return { type: 'labels', data: labels };
@@ -37,6 +35,7 @@ function readIdxFile(filepath) {
                     row.push(data.readUint8(offset));
                     offset += 1;
                 };
+                
                 image.push(row);
             };
             
