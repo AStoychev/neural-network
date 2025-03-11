@@ -13,6 +13,7 @@ function readIdxFile(filepath) {
         const labels = [];
         for (let i = 0; i < numberOfItems; i++) {
             labels.push(data.readUint8(offset))
+
             offset += 1;
         }
         return { type: 'labels', data: labels };
@@ -23,11 +24,11 @@ function readIdxFile(filepath) {
 
         const cols = data.readUint32BE(offset);
         offset += 4;
+        
         const images = [];
 
         for (let i = 0; i < numberOfItems; i++) {
             const image = [];
-
             for (let r = 0; r < rows; r++) {
                 const row = [];
 
