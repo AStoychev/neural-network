@@ -23,7 +23,6 @@ The `Perceptron` class:
 - Adjusts weights and bias via a learning rate.
 - Calculates accuracy on training and test datasets.
 
-
 ### MNIST Reader
 The `readIdxFile` function:
 - Reads IDX formatted files from the MNIST dataset.
