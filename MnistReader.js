@@ -7,6 +7,7 @@ function readIdxFile(filepath) {
     
     offset += 4;
     const numberOfItems = data.readUint32BE(offset);
+    
     offset += 4;
 
     if (magicNumber === 2049) {
@@ -38,7 +39,6 @@ function readIdxFile(filepath) {
                 };
                 image.push(row);
             };
-
             images.push(image);
         }
         
