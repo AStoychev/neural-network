@@ -23,7 +23,6 @@ function readIdxFile(filepath) {
         offset += 4;
         const cols = data.readUint32BE(offset);
         offset += 4;
-        
         const images = [];
 
         for (let i = 0; i < numberOfItems; i++) {
@@ -41,7 +40,6 @@ function readIdxFile(filepath) {
 
             images.push(image);
         }
-        
         return { type: "images", data: images }
     };
 };
