@@ -1,6 +1,8 @@
 # Neural Network Perceptron Implementation
 
+
 This project is a simple implementation of a perceptron neural network in JavaScript. The perceptron is trained on a small dataset and tested for accuracy. Additionally, functionality to read MNIST dataset files is provided for advanced usage.
+
 
 
 ## Features
