@@ -8,6 +8,13 @@ This project is a simple implementation of a perceptron neural network in JavaSc
 
 
 
+
+
+
+
+
+
+
 ## Features
 - **Perceptron Class**:
   - Implements a single-layer perceptron for binary classification.
